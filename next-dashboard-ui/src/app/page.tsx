@@ -1,7 +1,7 @@
-const Homepage = () => {
-  return (
-    <div className=''>Homepage</div>
-  )
-}
+import LandingPage from "@/components/school-management-landing-page";
 
-export default Homepage
+const Homepage = () => {
+  return <LandingPage />;
+};
+
+export default Homepage;
