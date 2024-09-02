@@ -24,7 +24,7 @@ const SingleStudentPage = () => {
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <h1 className="text-xl font-semibold">Cameron Moran</h1>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-muted-foreground">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
@@ -50,7 +50,7 @@ const SingleStudentPage = () => {
           {/* SMALL CARDS */}
           <div className="flex-1 flex gap-4 justify-between flex-wrap">
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white dark:bg-muted-accent p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
               <Image
                 src="/singleAttendance.png"
                 alt=""
@@ -64,7 +64,7 @@ const SingleStudentPage = () => {
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white dark:bg-muted-accent p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
               <Image src="/singleBranch.png" alt="" width={24} height={24} className="w-6 h-6" />
               <div className="">
                 <h1 className="text-xl font-semibold">6th</h1>
@@ -72,7 +72,7 @@ const SingleStudentPage = () => {
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white dark:bg-muted-accent p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
               <Image src="/singleLesson.png" alt="" width={24} height={24} className="w-6 h-6" />
               <div className="">
                 <h1 className="text-xl font-semibold">18</h1>
@@ -80,7 +80,7 @@ const SingleStudentPage = () => {
               </div>
             </div>
             {/* CARD */}
-            <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white dark:bg-muted-accent p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
               <Image src="/singleClass.png" alt="" width={24} height={24} className="w-6 h-6" />
               <div className="">
                 <h1 className="text-xl font-semibold">6A</h1>
@@ -90,16 +90,16 @@ const SingleStudentPage = () => {
           </div>
         </div>
         {/* BOTTOM */}
-        <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
+        <div className="mt-4 bg-white dark:bg-muted-accent rounded-md p-4 h-[800px]">
           <h1>Student&apos;s Schedule</h1>
           <BigCalendar />
         </div>
       </div>
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 flex flex-col gap-4">
-        <div className="bg-white p-4 rounded-md">
+        <div className="bg-white dark:bg-muted-accent p-4 rounded-md">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
-          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500 dark:text-muted-foreground">
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
               Student&apos;s Lessons
             </Link>

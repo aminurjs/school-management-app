@@ -10,9 +10,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="h-screen flex">
+    <div className="min-h-screen flex">
       {/* LEFT */}
-      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4">
+      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4 bg-white dark:bg-muted-accent dark:bg-[#09090B]">
         <Link href="/" className="flex items-center justify-center lg:justify-start gap-2">
           <Image src="/school-management.svg" alt="logo" width={32} height={32} />
           <span className="hidden lg:block font-bold">School</span>
@@ -20,9 +20,11 @@ export default function DashboardLayout({
         <Menu />
       </div>{" "}
       {/* Right */}
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-auto flex flex-col">
-        <Navbar />
-        {children}
+      <div className="w-[86%]  md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] dark:bg-[#151518] flex flex-col">
+        <div className=" h-screen overflow-auto">
+          <Navbar />
+          {children}
+        </div>
       </div>{" "}
     </div>
   );

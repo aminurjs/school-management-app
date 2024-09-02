@@ -112,7 +112,7 @@ const StudentForm = ({ type, data }: { type: "create" | "update"; data?: any }) 
           type="date"
         />
         <div className="flex flex-col gap-2 w-full md:w-1/4">
-          <label className="text-xs text-gray-500">Sex</label>
+          <label className="text-xs text-gray-500 dark:text-muted-foreground">Sex</label>
           <select
             className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
             {...register("sex")}
@@ -127,7 +127,7 @@ const StudentForm = ({ type, data }: { type: "create" | "update"; data?: any }) 
         </div>
         <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center">
           <label
-            className="text-xs text-gray-500 flex items-center gap-2 cursor-pointer"
+            className="text-xs text-gray-500 dark:text-muted-foreground flex items-center gap-2 cursor-pointer"
             htmlFor="img"
           >
             <Image src="/upload.png" alt="" width={28} height={28} />
