@@ -2,21 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For Webkit browsers like Chrome, Safari */
+::-webkit-scrollbar {
+  width: 3px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Default Chrome scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1; /* Default Chrome scrollbar thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a0; /* Default Chrome scrollbar thumb hover color */
+}
+/* Utility class to hide scrollbar */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  /* For Webkit-based browsers */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af #e5e7eb;
+}
+
+/* Adjust for dark mode in Firefox */
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-color: #6b7280 #374151;
+  }
+}
+
 .react-calendar {
   width: 100% !important;
   border: none !important;
   font-family: "Inter", sans-serif !important;
+  background: transparent !important;
 }
 
 .react-calendar__navigation__label__labelText {
-  font-weight: 600;
+  @apply font-semibold;
 }
 
 .react-calendar__tile--active {
-  background-color: #c3ebfa !important;
-  color: black !important;
+  @apply bg-[#c3ebfa] text-black dark:bg-accent dark:text-foreground !important;
 }
-
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  @apply bg-[#e6e6e6] dark:bg-accent !important;
+}
+.react-calendar__tile--now {
+  @apply bg-[#ffff76] dark:bg-slate-600 !important;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  @apply bg-[#e6e6e6] dark:bg-accent !important;
+}
 .rbc-btn-group:first-child {
   display: none !important;
 }
@@ -31,18 +82,15 @@
 }
 
 .rbc-btn-group:last-child button {
-  border: none !important;
-  background-color: #f1f0ff !important;
-  margin-left: 2px !important;
+  @apply border-none ml-0.5 bg-gray-100;
 }
 
 .rbc-toolbar button.rbc-active {
-  background-color: #dbdafe !important;
-  box-shadow: none !important;
+  @apply bg-[#dbdafe]  shadow-none !important;
 }
 
 .rbc-time-view {
-  border-color: #eee !important;
+  @apply border-[#eee] dark:border-gray-600;
 }
 
 .rbc-time-header {
@@ -62,7 +110,7 @@
 }
 
 .rbc-timeslot-group {
-  background-color: #f7fdff !important;
+  @apply bg-[#f7fdff] dark:bg-muted-accent !important;
 }
 
 .rbc-day-slot {
@@ -76,35 +124,42 @@
   margin: 10px !important;
   width: 99% !important;
 }
+.rbc-timeslot-group,
+.rbc-time-content > * + * > *,
+.rbc-day-slot .rbc-time-slot {
+  @apply border-[#ddd] dark:border-gray-600 !important;
+}
 
 .rbc-event:nth-child(1) {
-  background-color: #e2f8ff !important;
+  @apply bg-[#e2f8ff] dark:bg-accent !important;
 }
 .rbc-event:nth-child(2) {
-  background-color: #fefce8 !important;
+  @apply bg-[#fefce8] dark:bg-accent !important;
 }
 .rbc-event:nth-child(3) {
-  background-color: #f2f1ff !important;
+  @apply bg-[#f2f1ff] dark:bg-accent !important;
 }
 .rbc-event:nth-child(4) {
-  background-color: #fdf2fb !important;
+  @apply bg-[#fdf2fb] dark:bg-accent !important;
 }
 .rbc-event:nth-child(5) {
-  background-color: #e2f8ff !important;
+  @apply bg-[#e2f8ff] dark:bg-accent !important;
 }
 .rbc-event:nth-child(6) {
-  background-color: #fefce8 !important;
+  @apply bg-[#fefce8] dark:bg-accent !important;
 }
 .rbc-event:nth-child(7) {
-  background-color: #f2f1ff !important;
+  @apply bg-[#f2f1ff] dark:bg-accent !important;
 }
 .rbc-event:nth-child(8) {
-  background-color: #fdf2fb !important;
+  @apply bg-[#fdf2fb] dark:bg-accent !important;
 }
 
 .rbc-event-label {
-  color: gray !important;
-  margin-bottom: 5px;
+  @apply text-gray-500 dark:text-muted-foreground mb-1 !important;
+}
+.rbc-event-content {
+  @apply text-black dark:text-foreground;
 }
 
 @layer base {
