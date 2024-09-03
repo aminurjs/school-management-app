@@ -50,7 +50,7 @@ const columns = [
 ];
 
 const StudentListPage = () => {
-  const renderRow = (item: Student, listFor: string) => (
+  const renderRow = (item: Student) => (
     <tr
       key={item.id}
       className="border-b border-gray-200 dark:border-gray-600 even:bg-slate-50 dark:even:bg-transparent text-sm hover:bg-lamaPurpleLight  dark:hover:bg-accent"
