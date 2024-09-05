@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import {
   BarChart,
@@ -41,6 +42,8 @@ const data = [
 ];
 
 const AttendanceChart = () => {
+  const { theme } = useTheme();
+  console.log(theme);
   return (
     <div className="bg-white dark:bg-muted-accent rounded-lg p-4 h-full">
       <div className="flex justify-between items-center">
@@ -52,7 +55,14 @@ const AttendanceChart = () => {
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd" />
           <XAxis dataKey="name" axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false} />
           <YAxis axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false} />
-          <Tooltip contentStyle={{ borderRadius: "10px", borderColor: "lightgray" }} />
+          <Tooltip
+            contentStyle={{
+              borderRadius: "10px",
+              borderColor: "lightgray",
+              background: theme === "dark" ? "black" : "white",
+            }}
+          />
+
           <Legend
             align="left"
             verticalAlign="top"

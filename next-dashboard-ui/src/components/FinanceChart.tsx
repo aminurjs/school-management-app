@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import {
   LineChart,
@@ -76,6 +77,7 @@ const data = [
 ];
 
 const FinanceChart = () => {
+  const { theme } = useTheme();
   return (
     <div className="bg-white dark:bg-muted-accent rounded-xl w-full h-full p-4">
       <div className="flex justify-between items-center">
@@ -103,7 +105,13 @@ const FinanceChart = () => {
             tickMargin={10}
           />
           <YAxis axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false} tickMargin={20} />
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              borderRadius: "10px",
+              borderColor: "lightgray",
+              background: theme === "dark" ? "black" : "white",
+            }}
+          />
           <Legend
             align="center"
             verticalAlign="top"
