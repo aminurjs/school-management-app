@@ -6,7 +6,7 @@ const data = [
   {
     name: "Total",
     count: 106,
-    fill: "white",
+    fill: "#eee",
   },
   {
     name: "Girls",
