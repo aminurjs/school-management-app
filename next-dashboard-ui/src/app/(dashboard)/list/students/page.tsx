@@ -1,7 +1,10 @@
+"use client";
+
 import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
+import { useToast } from "@/hooks/use-toast";
 import { role, studentsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -50,6 +53,7 @@ const columns = [
 ];
 
 const StudentListPage = () => {
+  const { toast } = useToast();
   const renderRow = (item: Student) => (
     <tr
       key={item.id}
@@ -98,7 +102,15 @@ const StudentListPage = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            <button
+              onClick={() => {
+                toast({
+                  title: "Uh oh! Something went wrong.",
+                  description: "There was a problem with your request.",
+                });
+              }}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow"
+            >
               <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
