@@ -105,15 +105,23 @@ const StudentListPage = () => {
             <button
               onClick={() => {
                 toast({
-                  title: "Uh oh! Something went wrong.",
-                  description: "There was a problem with your request.",
+                  title: "Coming soon",
+                  description: "This feature not yet available",
                 });
               }}
               className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow"
             >
               <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            <button
+              onClick={() => {
+                toast({
+                  title: "Coming soon",
+                  description: "This feature not yet available",
+                });
+              }}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow"
+            >
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (

@@ -31,7 +31,7 @@ const menuItems = [
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/subject.png",
+        icon: "/books.svg",
         label: "Subjects",
         href: "/list/subjects",
         visible: ["admin"],
@@ -61,7 +61,7 @@ const menuItems = [
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
-        icon: "/result.png",
+        icon: "/test.svg",
         label: "Results",
         href: "/list/results",
         visible: ["admin", "teacher", "student", "parent"],
