@@ -35,7 +35,7 @@ school-management-app/next-dashboard-ui/
 
 1. **Clone the repository:**
    ```bash
-   git clone [<repository-url>](https://github.com/aminurjs/school-management-app)
+   git clone https://github.com/aminurjs/school-management-app
    ```
 
 2. **Navigate to the project directory:**
